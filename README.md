@@ -1,6 +1,5 @@
 # Influence in Performance of Feature Descriptor and Matching in Visual Keypoint-based Tracking for Simultaneous Localization and Mapping (SLAM)
 
-
 ## Story-telling
 
 - Why is this relevant?
