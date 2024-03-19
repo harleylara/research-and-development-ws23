@@ -1,5 +1,6 @@
 *.drawio.bkp
 non-public/
+checks/
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
