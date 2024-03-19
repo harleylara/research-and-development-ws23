@@ -1,0 +1,53 @@
+- ICL-NUIM:
+    url: https://www.doc.ic.ac.uk/~ahanda/VaFRIC/iclnuim.html
+    description: The ICL-NUIM dataset aims at benchmarking RGB-D, Visual Odometry and SLAM algorithms.
+    paper:
+      title: A Benchmark for RGB-D Visual Odometry, 3D Reconstruction and SLAM
+      url: https://www.doc.ic.ac.uk/~ahanda/VaFRIC/icra2014.pdf
+    year: 2014
+    scale: 
+      - small
+    environment:
+      - indoor
+    type: synthetic
+    sensors: TBD
+- TUM RGB-D Dataset:
+    url: https://cvg.cit.tum.de/data/datasets/rgbd-dataset
+    description: Contains the color and depth images of a Microsoft Kinect sensor along the ground-truth trajectory of the sensor.
+    paper: 
+      title: A Benchmark for the Evaluation of RGB-D SLAM Systems
+      url: http://ais.informatik.uni-freiburg.de/publications/papers/sturm12iros.pdf
+    year: 2012
+    scale: small
+    environment:
+      - indoor
+    type: real
+
+- The Victoria Park:
+    url: https://www.mrpt.org/Dataset_The_Victoria_Park
+    scale: large
+    environment:
+      - outdoor
+    type: real
+    sensors: TBD
+- Navlab SLAMMOT Datasets:
+    url: https://www.cs.cmu.edu/~bobwang/datasets.html
+    scale: 
+      - large
+      - medium
+      - small
+    environment:
+      - outdoor
+    sensors: TBD
+- RADISH Datasets:
+    url: https://radish.sourceforge.net/
+    scale:
+      - large
+      - medium
+      - small
+    environment:
+      - indoor
+      - outdoor
+
+- OpenSLAM Datasets:
+    url: https://openslam-org.github.io/
