@@ -10,8 +10,8 @@
 
 ## Proposed Method
 
-- Uses ICL-NUIM dataset
-- Implement a set of kernels:
+Using KinectFusion as the (only) underlaying algorithm:
+- Set of mutiples kernels in C++, CUDA, OpenCL and OpenMP
     - acquire (only CPU)
     - mm2meters
     - bilateralFilter
@@ -26,14 +26,17 @@
     - renderDepth
     - renderTrack
     - renderVolume
-
-
-Using RGB-D images measure:
-- Frame Rate
-- Energy Consumptionk
-- absolute trajectory error (ATE)
+- Uses ICL-NUIM dataset for validation
+- Metrics:
+    - Frame Rate
+    - Energy Consumptionk
+    - absolute trajectory error (ATE)
 
 ## Method(s) for evaluation
+
+The metrics where compare in:
+- Multiple hardware platforms
+- Multiple software implementations
 
 ## Contributions
 
@@ -41,13 +44,12 @@ Using RGB-D images measure:
 
 ## Results
 
-
-
 ## Challenges
 
 ## Personal Notes
 
 - Benefits
-    - Only evaluates Dense-SLAM implementations
+    - Only suppport KinectFusion
+    - Evaluate over a single dataset
 - Discussion compare to other methods
 - Open-ended research questions
