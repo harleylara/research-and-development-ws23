@@ -9,12 +9,14 @@
     - [ ] Performance Analysis of NDT-based Graph SLAM for Autonomous Vehicle in Diverse Typical Driving Scenarios of Hong Kong
     - [ ] Predicting Performance of SLAM Algorith
 
+## To Read
 
-## Papers Review
+- [x] [Introducing SLAMBench, a performance and accuracy benchmarking methodology for SLAM](./slambench.md)
+- [x] [SLAMBench2: Multi-Objective Head-to-Head Benchmarking for Visual SLAM](./slambench2.md)
+- [x] SLAMBench 3.0: Systematic Automated Reproducible Evaluation of SLAM Systems for Robot Vision Challenges and Scene Understanding
+- [ ] [Robust SLAM Systems: Are We There Yet?](./are-we-there-yet.md)
+- [ ] [Past, Present, and Future of Simultaneous Localization and Mapping: Toward the Robust-Perception Age](./past-present-and-future-of-slam.md)
 
-Works on measuring the SLAM performance:
-- Dense RGB-D SLAM
-    - [Introducing SLAMBench, a performance and accuracy benchmarking methodology for SLAM](./slambench.md)
 
 ## SLAM Challenges
 
@@ -29,35 +31,78 @@ before 2006:
 Metrics:
 - frame rate (slambench)
 - energy consumption (slambench)
-- Accuracy Trade-Off (slambench)
-    - Absolute trajectory error (ATE)
+- absolute trajectory error (ATE) (slambench, are-we-there-yet)
+- relative pose error (RPE) (slambench2, are-we-there-yet)
+- reconstruction error (slambench2)
+- reconstruction completeness (slambench2)
+- absolute relative difference (slambench3)
+- accurate depth percentage (slambench3)
+- memory usage (slambench2)
+- For semantic SLAM:
+    - segmentation accuracy (slambench3)
 
-The collection of benchmarks are in my Zotero folder.
+Full collection of benchmarks are in my Zotero folder:
+- [Introducing SLAMBench, a performance and accuracy benchmarking methodology for SLAM](./slambench.md)
+- [SLAMBench2: Multi-Objective Head-to-Head Benchmarking for Visual SLAM](./slambench2.md)
+
+Robustness against:
+- Illumination changes (check sectio 2 in Robust SLAM Systems)
+    - active exposure control
+    - binary local descriptors for brightness normalization such as Census transform
+    - illumination-invariant metrics to register images
+- Dynamic objects
+- Blured frames (due to fast camera movement for example)
+    - frame deblurring
+    - low quality but high frequency depth estimation
 
 ## WP 2 - Survey Datasets 
 
-[datasets.yml](./datasets.yml)
+currently are in the [datasets.yml](./datasets.yml) file and in the zoreto folder.
 
-- [ICL-NUIM dataset](https://www.doc.ic.ac.uk/~ahanda/VaFRIC/iclnuim.html) (slambench)
-    - scale: small
-    - environment: indoor
-    - type: synthetic
-    - sensors: TBD
+TODO:
+- [ ] add datasets scale.
 
-- [The Victoria Park Dataset](https://www.mrpt.org/Dataset_The_Victoria_Park)
-    - scale: large
-    - environment: outdoor
-    - sensors: TBD
-- [Navlab SLAMMOT Datasets](https://www.cs.cmu.edu/~bobwang/datasets.html)
-    - scale: large, medium and small
-    - environment: outdoor
-    - sensors: TBD
-
-- [RADISH Datasets](https://radish.sourceforge.net/): A collection of public datasets
-    - scale: large, medium and small
-    - environment: indoor and outdoor
-    - sensors: N/A
-- [OpenSLAM Datasets](https://openslam-org.github.io/): A collection of public datasets and implementations
+```yml
+- ICL-NUIM Dataset:
+    environment:
+        - indoor:
+    sensor:
+        - RGB-D
+    ground-truth:
+        - trajectory
+        - 3D point cloud
+- TUM-RGDB Dataset:
+    environment:
+        - indoor
+    sensor:
+        - RGB-D
+        - IMU
+    ground-truth:
+        - trajectory
+- EuRoC MAV Dataset:
+    environment:
+        - indoor
+    sensor:
+        - greyscale Stereo
+        - IMU
+    ground-truth:
+        - trajectory
+        - 3D point cloud
+- NYU Depth Dataset V2 (semantic):
+    environment:
+        - indoor:
+    sensor:
+        - RGB-D
+    ground-truth:
+        - semantic segmentation
+- VolumeDeform:
+    environment:
+        - indoor
+    sensor:
+        - RGB-D
+    ground-truth:
+        - TBA
+```
 
 ## WP 3 - Extract Visual Keypoint-based based SLAMs
 
